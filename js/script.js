@@ -1,20 +1,21 @@
 function Clock() {
   var rtClock = new Date();
-  //console.log(rtClock);
 
-  var hours = rtClock.getHours();
-  var minutes = rtClock.getMinutes();
-  var seconds = rtClock.getSeconds();
+  var h = rtClock.getHours();
+  var m = rtClock.getMinutes();
+  var s = rtClock.getSeconds();
+  var am = "AM";
 
-  var amPm = hours < 12 ? "AM" : "PM";
+  if (h > 12) {
+    h = h - 12;
+    var am = "PM";
+  }
 
-  hours = hours < 10 ? hours - 12 : hours;
-
-  hours = ("0" + hours).slice(-2);
-  minutes = ("0" + minutes).slice(-2);
-  seconds = ("0" + seconds).slice(-2);
+  h = h < 10 ? "0" + h : h;
+  m = m < 10 ? "0" + m : m;
+  s = s < 10 ? "0" + s : s;
 
   document.getElementById("clock").innerHTML =
-    hours + "  :  " + minutes + "  :  " + seconds + " " + amPm;
+    h + "  :  " + m + "  :  " + s + " " + am;
   var t = setTimeout(Clock, 500);
 }
