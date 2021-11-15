@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]
+{
+  display: none;
+}
 
 :root {
   --bg-color: #2e2e2e;
@@ -7,7 +11,7 @@
   --typewriterCharacters: 22;
 }
 
-body {
+.main {
   margin: 0;
   font-family: "Inconsolata", sans-serif;
   min-height: 100vh;
@@ -83,4 +87,23 @@ a {
 
 #clock {
   padding-bottom: 20px;
+}
+
+.prices {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  white-space: nowrap;
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
+marquee {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+span {
+  padding-left: 10vw;
 }
