@@ -21,7 +21,7 @@ setTimeout(function () {
   document
     .querySelector(".about-me-section")
     .scrollIntoView({ behavior: "smooth", block: "center" });
-}, 7000);
+}, 8000);
 
 const faders = document.querySelectorAll(".fade-in");
 
