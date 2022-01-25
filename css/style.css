@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]
-{
-  display: none;
-}
 
 :root {
   --bg-color: #2e2e2e;
@@ -11,9 +7,12 @@ img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhos
   --typewriterCharacters: 22;
 }
 
+* {
+  font-family: "inconsolata", monospace;
+}
+
 .main {
   margin: 0;
-  font-family: "Inconsolata", sans-serif;
   min-height: 100vh;
   display: grid;
   place-content: center;
@@ -22,16 +21,15 @@ img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhos
   color: var(--font-color);
 }
 
-h1 {
+.main h1 {
   font-size: clamp(1rem, 3vw + 1rem, 4rem);
   position: relative;
-  font-family: "Inconsolata", monospace;
   position: relative;
   width: max-content;
 }
 
-h1::before,
-h1::after {
+.main h1::before,
+.main h1::after {
   content: "";
   position: absolute;
   top: 0;
@@ -40,13 +38,13 @@ h1::after {
   left: 0;
 }
 
-h1::before {
+.main h1::before {
   background: var(--bg-color);
   animation: typewriter var(--typewriterSpeed)
     steps(var(--typewriterCharacters)) 1s forwards;
 }
 
-h1::after {
+.main h1::after {
   width: 0.125em;
   background: var(--font-color);
   animation: typewriter var(--typewriterSpeed)
@@ -54,8 +52,8 @@ h1::after {
     blink 750ms steps(var(--typewriterCharacters)) infinite;
 }
 
-.subtitle,
-a {
+.main .subtitle,
+.main a {
   color: var(--font-color);
   font-size: 2rem;
   font-weight: 400;
@@ -87,4 +85,201 @@ a {
 
 #clock {
   padding-bottom: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.about-me-section > * {
+  color: #2e2e2e;
+}
+
+.about-title {
+  font-size: 48px;
+  text-align: center;
+  padding-top: 7vh;
+}
+
+.about-me {
+  height: 70vh;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-me-image {
+  height: 50vh;
+  width: auto;
+  padding: 0 8vw;
+}
+
+.about-me-text {
+  padding-right: 5vw;
+  font-size: 30px;
+}
+
+.projects-section {
+  background-color: #2e2e2e;
+}
+
+.projects-title {
+  height: auto;
+  font-size: 48px;
+  text-align: center;
+  padding-top: 7vh;
+  color: white;
+}
+
+.projects {
+  height: 75vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 170px 220px 70px;
+  grid-template-areas: "image" "text" "languages";
+  border-radius: 15px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 4vh 2vw;
+}
+
+.card-image1 {
+  grid-area: image;
+  background: url("../images/studytips2.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.card-image2 {
+  grid-area: image;
+  background: url("../images/demo.PNG");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.card-image3 {
+  grid-area: image;
+  background: url("../images/wordcounter.PNG");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.card-text {
+  grid-area: text;
+  margin: 20px;
+}
+
+.card-text .date {
+  color: #2e2e2e;
+  font-size: 12px;
+}
+
+.card-text h2 {
+  margin-top: 0px;
+  font-size: 28px;
+}
+
+.card-text p {
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.card-text a {
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.card-languages {
+  grid-area: languages;
+  display: flex;
+  justify-content: space-around;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #2e2e2e;
+}
+
+.card-languages .language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-languages .value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.projects-more {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 750ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .main h1 {
+    font-size: 34px;
+  }
+
+  .main a {
+    font-size: 28px;
+  }
+
+  .about-me {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-me-image {
+    height: 30vh;
+    width: auto;
+  }
+
+  .about-me-text {
+    padding-left: 5vw;
+    font-size: 22px;
+  }
+
+  .projects {
+    height: 190vh;
+  }
 }
