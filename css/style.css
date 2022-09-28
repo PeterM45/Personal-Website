@@ -284,6 +284,15 @@ nav {
   margin: 4vh 2vw;
 }
 
+.card-image0 {
+  grid-area: image;
+  background: url("../images/subcon.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 .card-image1 {
   grid-area: image;
   background: url("../images/studytips2.png");
@@ -323,12 +332,12 @@ nav {
 
 .card-text h2 {
   margin-top: 0px;
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .card-text p {
   color: black;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
 }
 
