@@ -262,6 +262,7 @@ nav {
 
 .projects {
   height: 75vh;
+  min-height: 100vh;
   width: auto;
   display: flex;
   align-items: center;
@@ -273,6 +274,7 @@ nav {
 .card {
   display: grid;
   grid-template-columns: 300px;
+
   grid-template-rows: 170px 220px 70px;
   grid-template-areas: "image" "text" "languages";
   border-radius: 15px;
@@ -314,6 +316,15 @@ nav {
 .card-image3 {
   grid-area: image;
   background: url("../images/wordcounter.PNG");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.card-image4 {
+  grid-area: image;
+  background: url("../images/aurelis.PNG");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: 100%;
@@ -418,6 +429,6 @@ nav {
   }
 
   .projects {
-    height: 200vh;
+    height: 350vh;
   }
 }
